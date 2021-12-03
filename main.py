@@ -5,7 +5,8 @@
 from time import sleep, ctime
 
 import sys
-from day01.print_index_grammar__prosample import print_sample
+
+from day01.print_index_grammar__prosample import *
 
 
 def print_hi(names):
@@ -21,5 +22,8 @@ if __name__ == '__main__':
 
     # input("\n\n 按下 enter exit")
 
+    target_data = "I Like You"
+
+    print(reverse_words(target_data))
     x = 'hello world '
     sys.stderr.write(x)
