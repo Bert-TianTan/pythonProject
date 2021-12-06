@@ -27,3 +27,4 @@ if __name__ == '__main__':
     print(reverse_words(target_data))
     x = 'hello world '
     sys.stderr.write(x)
+    study_if_else()
