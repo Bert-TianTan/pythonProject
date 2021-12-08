@@ -1,6 +1,9 @@
 import threading
 import time
-import json
+
+__all__ = [
+    'FirstThread', 'print_time'
+]
 
 exitFlag = False
 
