@@ -1,5 +1,5 @@
 # 主要是测试字符串的操作
-
+import os
 import random
 
 # >>> 5 + 4  # 加法
@@ -87,3 +87,127 @@ def study_if_else():
         print("less than 5")
     else:
         print("more than 5")
+
+
+def print_index_day01():
+
+    print_sample()
+
+    # input("\n\n 按下 enter exit")
+
+    target_data = "I Like You"
+
+    print(reverse_words(target_data))
+
+    study_if_else()
+
+
+import sys
+import collections
+import os
+
+def print_list_set_dict():
+
+    print("=========deque start===========")
+    a = [1, 2, 3, 4, 5, 2]
+
+    a.insert(1, 33)
+    print(a)
+
+    queues = collections.deque(["Tian", "Bert"])
+    queues.append("HELLO")
+    queues.append("WORLD")
+    queues.append("#()3")
+    queues.append("#()sdsd")
+    queues.append("#(sdsdd)3")
+    queues.append("#()s2343")
+    print(queues)
+
+    print("HELLO" in queues)
+
+    queues.popleft()
+    print(queues)
+
+    elements = queues.pop()
+    # print("queues = {queues}, elements = {elements}".format(**queues, **elements))
+    print(elements)
+
+    print(["_".join(target) for target in queues])
+
+    for x in queues:
+        print(x)
+
+    del queues[0]
+    # print(queues[1:1])
+
+    print("=========deque  end===========")
+
+    print("====================")
+
+    print("=========set start===========")
+    basket = {'apple', 'banana', 'orange'}
+    print(basket)
+
+    first = set("adfafa22222233434444")
+    print(first)
+    print("=========set end===========")
+
+    print("====================")
+    print("=========dict start===========")
+
+    dicts = {"H": "nihao", "B": "nihal", "A": "2932"}
+    print(dicts)
+
+    print("B" in dicts)
+    print(dicts.keys())
+
+    for key in dicts.keys():
+        print(key)
+
+    for key, value in dicts.items():
+        print(key, value)
+
+    print("=========dict end===========")
+
+    print("=========file start===========")
+    print(sys.path)
+
+    print(dir())
+
+    print(os.getcwd())
+    print(os.getcwdb())
+    target_path = "/temps_H"
+    if not os.path.exists(target_path):
+        print("{}, 不存在，开始创建。".format(target_path))
+        os.mkdir(target_path)
+    else:
+        print("{}, 已经存在。".format(target_path))
+
+    target_file = target_path + "/python_hello.txt"
+    with open(target_file, "w+") as files:  # 自动关闭
+        readData = files.write("Hello")
+
+    print(files.closed)
+
+    files = open(target_file, "r+")
+    for liness in files:
+        print(liness, end="\n")
+    files.close()
+    print(files.closed)
+    print("=========file end===========")
+
+
+class Resolve:
+    name = ""
+    age = 0
+    __money = 0
+
+    def __init__(self, _name, _age, money):
+        self.name = _name
+        self.age = _age
+        self.__money = money
+
+    def speaker(self):
+        print(self)
+        print(self.__class__)
+        print('I am {name}, {age} years old. {moneys}? '.format(name=self.name, age=self.age, moneys=self.__money))
